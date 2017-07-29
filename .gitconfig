@@ -1,0 +1,9 @@
+[user]
+    name = Jonathan Doherty
+    email = jonathan.patrick.doherty@gmail.com
+
+[alias]
+    co = checkout
+    st = status -s
+    br = branch -a
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
