@@ -17,5 +17,10 @@ git () {
 
 Terminal
 ```bash
-$ docker run --rm --workdir /custom --volume $(pwd):/custom dohjon/docker-git:2.13.0
+$ docker run --rm --workdir /custom --volume $(pwd):/custom dohjon/docker-git:2.13.0
+```
+
+Debug
+```bash
+$ docker run --rm -it --entrypoint /bin/sh --workdir /custom --volume $(pwd):/custom dohjon/docker-git:2.13.0
 ```
