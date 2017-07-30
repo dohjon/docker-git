@@ -6,5 +6,6 @@ LABEL maintainer="Jonathan Doherty" \
 RUN apk add --no-cache git
 
 COPY .gitconfig /root/
+COPY .git-credentials /root/
 
 ENTRYPOINT ["git"]
