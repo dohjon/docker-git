@@ -1,6 +1,6 @@
 [user]
-    name = Jonathan Doherty
-    email = jonathan.patrick.doherty@gmail.com
+    name = <NAME>
+    email = <EMAIL>
 
 [alias]
     co = checkout
@@ -9,4 +9,16 @@
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 [credential]
-        helper = store
+    # https://git-scm.com/docs/git-credential-store
+    helper = store
+
+[core]
+    # excludesfile = ~/.gitignore_global
+    
+    # Linux/Mac
+    # Changes CR/LF to LF on commit (fixes any windows line endings that get introduced)
+    autocrlf = input
+
+    # Windows
+    # Changes LF to CR/LF on checkout. But converts CR/LF to LF on commit.
+    #autocrlf = true

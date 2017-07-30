@@ -2,36 +2,50 @@
 
 - [https://git-scm.com/doc](https://git-scm.com/doc)
 
-## Installation
-https://git-scm.com/docs/git-credential-store
-
-
 ## Usage
-
 
 **.bashrc** or **.bash_profiles**
 ```bash
 git () {
-    USERNAME=""
-    PASSWORD=""
-    GIT_VERSION="2.13.0"
     docker run \
         --rm \
-        --env $USERNAME \
-        --env $PASSWORD \
+        --env USER="" \
+        --env EMAIL="" \
+        --env GITHUB_USERNAME="" \
+        --env GITHUB_PASSWORD="" \
         --workdir /custom \
         --volume $(pwd):/custom \
-        dohjon/docker-git:$GIT_VERSION \
+        dohjon/docker-git:latest \
         "$@"
 }
 ```
 
 Terminal
 ```bash
-$ docker run --rm --workdir /custom --volume $(pwd):/custom dohjon/docker-git:2.13.0
+docker run \
+    --rm \
+    --workdir /custom \
+    --volume $(pwd):/custom \
+    --env USER="" \
+    --env EMAIL="" \
+    --env GITHUB_USERNAME="" \
+    --env GITHUB_PASSWORD="" \
+    dohjon/docker-git:latest
 ```
 
 Debug
 ```bash
-$ docker run --rm -it --entrypoint /bin/sh --workdir /custom --volume $(pwd):/custom dohjon/docker-git:2.13.0
+docker run \
+    --interactive \
+    --tty \
+    --entrypoint /bin/sh
+    --rm \
+    --workdir /custom \
+    --volume $(pwd):/custom \
+    --env USER="" \
+    --env EMAIL="" \
+    --env GITHUB_USERNAME="" \
+    --env GITHUB_PASSWORD="" \
+    dohjon/docker-git:latest
 ```
+
