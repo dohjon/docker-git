@@ -8,6 +8,7 @@ https://git-scm.com/docs/git-credential-store
 
 ## Usage
 
+
 **.bashrc** or **.bash_profiles**
 ```bash
 git () {
