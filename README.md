@@ -9,7 +9,7 @@
 git () {
     docker run \
         --rm \
-        --env USER="" \
+        --env NAME="" \
         --env EMAIL="" \
         --env GITHUB_USERNAME="" \
         --env GITHUB_PASSWORD="" \
@@ -24,12 +24,12 @@ Terminal
 ```bash
 docker run \
     --rm \
-    --workdir /custom \
-    --volume $(pwd):/custom \
-    --env USER="" \
+    --env NAME="" \
     --env EMAIL="" \
     --env GITHUB_USERNAME="" \
     --env GITHUB_PASSWORD="" \
+    --workdir /custom \
+    --volume $(pwd):/custom \
     dohjon/docker-git:latest
 ```
 
@@ -40,12 +40,12 @@ docker run \
     --tty \
     --entrypoint /bin/sh
     --rm \
-    --workdir /custom \
-    --volume $(pwd):/custom \
-    --env USER="" \
+    --env NAME="" \
     --env EMAIL="" \
     --env GITHUB_USERNAME="" \
     --env GITHUB_PASSWORD="" \
+    --workdir /custom \
+    --volume $(pwd):/custom \
     dohjon/docker-git:latest
 ```
 
